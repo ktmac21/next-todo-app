@@ -1,0 +1,56 @@
+.header {
+    background-color: #FFA500; /* Bold Orange Background */
+    color: white;
+    text-align: center;
+    padding: 40px 20px; /* Adjust padding to suit your design */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .header-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .header h1 {
+    font-size: 48px; /* Large text size for heading */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header p {
+    font-size: 24px; /* Subtitle size */
+    margin: 10px 0 20px; /* Spacing between elements */
+  }
+  
+  .shop-now {
+    background-color: white;
+    color: #FFA500; /* Orange text color that matches the background */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .shop-now:hover {
+    background-color: #FFA500;
+    color: white;
+  }
+  
+  /* Responsive Design Adjustments */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 32px;
+    }
+  
+    .header p {
+      font-size: 18px;
+    }
+  
+    .shop-now {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
+  
