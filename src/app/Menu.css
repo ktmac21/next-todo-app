@@ -25,5 +25,34 @@
     margin-right: 20%;
   }
   
+  /* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack logo and navigation vertically */
+    padding: 10px 5px; /* Reduce padding */
+  }
+
+  .logo, .nav {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center; /* Center-align logo and nav items */
+  }
+
+  .nav {
+    margin-top: 10px; /* Add top margin for separation */
+  }
+
+  .link {
+    font-size: 16px; /* Smaller font size for links */
+    margin-right: 5px; /* Less space between links */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 5px; /* Even smaller padding for very small screens */
+  }
+
+}
  
   

@@ -1,95 +1,13 @@
-/* .task-manager {
-  text-align: center;
-  color: white;
-  font-size: 30px;
-  padding-bottom: 15px;
-}
-
 .form-container {
-  margin: 20px;
+  margin: 0 auto;
   text-align: center;
-}
-
-.toggle-button {
-  padding: 10px 20px;
-  background-color: orange;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.toggle-button:hover {
-  background-color: orange;
-}
-
-.task-form {
-  margin-top: 10px;
-}
-
-.task-input {
-  padding: 10px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.submit-button {
-  padding: 10px 20px;
-  background-color: black;
-  border-color: white;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.submit-button:hover {
-  background-color: orange;
-}
-
-.task-list {
-  color: white;
-  list-style: none;
-  padding: 10px;
-  margin-top: 20px;
-  text-align: left;
-}
-
-.task-item {
-  color: white;
-  padding: 10px;
-  background-color: black;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.task-text {
-  flex-grow: 1; /* Allow the text to take up available space */
-/* }
-
-.complete-button {
-  padding: 5px 15px;
-  font-size: 14px;
-  border-radius: 10px;
-  background-color: orange;
-} */ 
-
-
-/* Form.css */
-.form-container {
-  margin: 20px;
-  text-align: center;
+  width: 90%;
 }
 
 .task-manager {
   color: white;
   font-size: 30px;
   padding-bottom: 5px;
- 
   margin-top: 10px;
 }
 
@@ -104,6 +22,11 @@
   cursor: pointer;
 }
 
+.submit-button {
+  width: 100px;
+  margin-left: 1px;
+}
+
 .toggle-button:hover,
 .submit-button:hover,
 .complete-button:hover {
@@ -115,10 +38,13 @@
 }
 
 .task-input {
-  padding: 10px;
-  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 20%;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-right: 20px;
+  padding-right: 10px;
 }
 
 .task-list,
@@ -140,8 +66,64 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  text-align: center;
 }
 
 .task-text {
   flex-grow: 1; /* Allow the text to take up available space */
+  text-align: center;
 }
+
+.delete-button {
+  padding: 5px 10px;
+  background-color: rgb(52, 5, 52);
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: purple;
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .task-list,
+  .completed-task-list {
+    width: 80%; /* Full width for smaller devices */
+  }
+
+  .task-manager {
+    font-size: 24px; /* Smaller font size for smaller devices */
+  }
+
+  .task-item {
+    flex-direction: column; /* Stack elements vertically on very small screens */
+    align-items: center; /* Center-align items vertically */
+  }
+
+  .task-input {
+    width: auto; /* Adjust width for smaller devices */
+  }
+  
+  .task-text {
+    margin-bottom: 5px;
+  }
+}
+  @media (max-width: 480px) {
+
+    .task-list,
+  .completed-task-list {
+    padding-right: 45px;
+  }
+
+    .task-manager {
+      font-size: 20px; /* Even smaller font size for very small devices */
+    }
+  
+    .task-text {
+      text-align: center; /* Center text on the smallest screens */
+    }
+  }

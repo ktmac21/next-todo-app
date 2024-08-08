@@ -123,7 +123,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { db } from "../../firebase.js"
-import { push, ref, set, onValue, update } from 'firebase/database'
+import { push, ref, set, onValue, update, remove } from 'firebase/database'
 import './Form.css';
 
 const Form = () => {
@@ -152,6 +152,11 @@ const Form = () => {
 
     return () => unsubscribe();
   }, []);
+
+  const handleDelete = (taskId) => {
+    const taskRef = ref(db, `tasks/${taskId}`);
+    remove(taskRef); 
+  };
 
   const handleButtonClick = () => {
     setIsVisible(!isVisible);
@@ -226,6 +231,9 @@ const Form = () => {
             {completedTasks.map((task) => (
               <li key={task.id} className="task-item">
                 <span className="task-text">{task.task}</span>
+                <button onClick={() => handleDelete(task.id)} className="delete-button">
+              Delete
+            </button>
               </li>
             ))}
           </ul>
