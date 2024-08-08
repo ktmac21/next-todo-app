@@ -1,4 +1,7 @@
+
 import React from 'react';
+import Form from './form';
+
 import './Header.css';
 
 const Header = () => {
@@ -7,7 +10,6 @@ const Header = () => {
       <div className="header-content">
         <h1>Your To-Do List</h1>
         <p>Manage your tasks effortlessly!</p>
-        <button className="shop-now">Get Started</button>
       </div>
     </div>
   );

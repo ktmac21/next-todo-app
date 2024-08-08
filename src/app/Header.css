@@ -29,17 +29,3 @@
   margin: 10px 0 20px; /* Spacing between elements */
 }
 
-.shop-now {
-  background-color: white;
-  color: #FFA500; /* Orange text color that matches the background */
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.shop-now:hover {
-  background-color: #FFA500;
-  color: white;
-}
