@@ -1,0 +1,31 @@
+/* src/components/Menu.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFA500; /* Adjust the color to match your design */
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  .nav {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black; /* Adjust the color as needed */
+    font-size: 16px; /* Adjust the size as needed */
+  }
+  
+  .login {
+    flex: 1;
+    text-align: right;
+    padding-right: 100px;
+  }
+  
