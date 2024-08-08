@@ -1,60 +1,147 @@
+/* .task-manager {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
 .form-container {
-    margin: 20px;
-    text-align: center;
-  }
-  
-  .toggle-button {
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .toggle-button:hover {
-    background-color: black;
-  }
-  
-  .task-form {
-    margin-top: 10px;
-  }
-  
-  .task-input {
-    padding: 10px;
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  
-  .submit-button:hover {
-    background-color: #218838;
-  }
-  
-  .task-list {
-    color: white;
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .task-item {
-    color: white;
-    padding: 10px;
-    background-color: black;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
-  
+  margin: 20px;
+  text-align: center;
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: orange;
+}
+
+.task-form {
+  margin-top: 10px;
+}
+
+.task-input {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: black;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.submit-button:hover {
+  background-color: orange;
+}
+
+.task-list {
+  color: white;
+  list-style: none;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.task-item {
+  color: white;
+  padding: 10px;
+  background-color: black;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-text {
+  flex-grow: 1; /* Allow the text to take up available space */
+/* }
+
+.complete-button {
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: orange;
+} */ 
+
+
+/* Form.css */
+.form-container {
+  margin: 20px;
+  text-align: center;
+}
+
+.task-manager {
+  color: white;
+  font-size: 30px;
+  padding-bottom: 5px;
+ 
+  margin-top: 10px;
+}
+
+.toggle-button,
+.submit-button,
+.complete-button {
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-button:hover,
+.submit-button:hover,
+.complete-button:hover {
+  background-color: orange;
+}
+
+.task-form {
+  margin-top: 10px;
+}
+
+.task-input {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.task-list,
+.completed-task-list {
+  list-style: none;
+  padding-top: 5px;
+  margin: 20px auto;
+  width: 50%; /* Set a specific width or percentage */
+  text-align: center;
+  color: white;
+}
+
+.task-item {
+  background-color: black;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.task-text {
+  flex-grow: 1; /* Allow the text to take up available space */
+}

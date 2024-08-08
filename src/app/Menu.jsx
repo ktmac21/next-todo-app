@@ -19,12 +19,7 @@ const Menu = () => {
       <nav className="nav">
         <Link href="/" className="link">Home</Link>
         <Link href="/about" className="link">About</Link>
-        <Link href="/contact" className="link">Contact</Link>
       </nav>
-      <div className="login">
-        <Link href="/login" className="link">Log In</Link>
-        {/* Include other icons or buttons as needed */}
-      </div>
     </header>
   );
 };

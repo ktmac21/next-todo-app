@@ -1,31 +1,29 @@
-/* src/components/Menu.module.css */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FFA500; /* Adjust the color to match your design */
+    background-color: #FFA500; 
     padding: 10px 20px;
   }
   
   .logo {
-    flex: 1;
+    flex: start;
+    margin-left: 20%;
   }
   
   .nav {
-    flex: 2;
+    flex: end;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    margin-right: 20%;
   }
   
   .link {
     text-decoration: none;
-    color: black; /* Adjust the color as needed */
-    font-size: 16px; /* Adjust the size as needed */
+    color: black; 
+    font-size: 20px; 
+    margin-right: 20%;
   }
   
-  .login {
-    flex: 1;
-    text-align: right;
-    padding-right: 100px;
-  }
+ 
   
