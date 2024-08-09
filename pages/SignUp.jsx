@@ -4,6 +4,8 @@ import './SignUp.css'
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import {auth} from '../firebase.js'
 import { useRouter } from 'next/navigation'
+import Header from '../src/app/Header'
+import Menu from '../src/app/Menu'
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -27,6 +29,9 @@ const SignUp = () => {
   };
 
   return (
+    <div>
+    <Menu />
+    <Header />
     <div className="signup-container">
       <form onSubmit={handleSignUp} className="signup-form">
         <h2>Sign Up</h2>
@@ -52,6 +57,7 @@ const SignUp = () => {
         </div>
         <button type="submit">Sign Up</button>
       </form>
+    </div>
     </div>
   );
 };

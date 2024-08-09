@@ -1,16 +1,26 @@
 // src/components/Menu.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import "./Menu.css"
 import logo from "/public/logo.png"
-import { signOut } from 'firebase/auth'
+import { signOut, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../../firebase.js'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 const Menu = () => {
+  const [user, setUser] = useState(null); // State to store the user
   const router = useRouter(); // Initialize the useRouter hook
 
+  useEffect(() => {
+    // Listen for authentication state changes
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser); // Update the user state
+    });
+
+    return () => unsubscribe(); // Cleanup the listener on unmount
+  }, []);
+  
   const handleSignOut = async () => {
     try {
       const res = await signOut(auth); // Sign out the user
@@ -21,19 +31,29 @@ const Menu = () => {
     }
   };
   return (
-    <header className="header">
+    <header className="menu-header">
       <div className="logo">
+        <Link href="/" passHref>
+  
         <Image 
+        className="logo-image"
         priority
         src={logo} 
         alt="Logo"
-        height="60"
-        width="60" />
+        height={100}
+        width={100} />
+        
+        </Link>
       </div>
       <nav className="nav">
-        <Link href="/SignUp" className="link">Sign Up</Link>
-        <Link href="/SignIn" className="link">Login</Link>
-        <button className="logout-button" onClick={handleSignOut}>Sign Out</button>
+      {!user ? (
+          <>
+            <Link href="/SignUp" className="link">Sign Up</Link>
+            <Link href="/SignIn" className="link">Login</Link>
+          </>
+        ) : (
+          <button className="logout-button" onClick={handleSignOut}>Sign Out</button>
+        )}
         
       </nav>
     </header>

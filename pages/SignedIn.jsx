@@ -6,7 +6,6 @@ import { auth } from '../firebase'; // Ensure this path is correct
 import Form from '../src/app//Form'; // Ensure this path is correct
 import Header from '../src/app/Header' // Optionally include the header
 import Menu from '../src/app/Menu';
-import '../src/app/globals.css';
 
 const SignedIn = () => {
   const [loading, setLoading] = useState(true);

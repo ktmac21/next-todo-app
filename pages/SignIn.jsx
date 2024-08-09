@@ -5,6 +5,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase.js';
 import { useRouter } from 'next/navigation'
 import Header from '../src/app/Header'
+import Menu from '../src/app/Menu'
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -29,6 +30,7 @@ const SignIn = () => {
 
   return (
     <div>
+    <Menu />
     <Header/>
     <div className="signin-container">
       <form onSubmit={handleSignIn} className="signin-form">

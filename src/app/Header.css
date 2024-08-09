@@ -1,60 +1,70 @@
-.header {
-  background-color: #FFA500; /* Bold Orange Background */
-  color: white;
+ /* src/components/Header.css */
+body {
+  background-color: #20232a;
+}
+
+ .header {
+  background-color: #282c34;
+  color: #ffffff;
+  padding: 20px;
   text-align: center;
-  padding: 40px 20px; /* Adjust padding to suit your design */
-  font-family: 'Oswald', sans-serif; /* Oswald font */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-bottom: 1px solid #333;
 }
 
-.header-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* Center children horizontally */
-  width: 100%; /* Use full width of the header */
-}
-
-.header h1 {
-  font-size: 48px; /* Large text size for heading */
-  font-weight: 700; /* Bold weight */
+.header-content h1 {
+  font-size:5rem;
   margin: 0;
-  padding: 0;
 }
 
-.header p {
-  font-size: 24px; /* Subtitle size */
-  margin: 10px 0 20px; /* Spacing between elements */
+.header-content p {
+  font-size: 2.5rem;
+  color: #bbbbbb;
+  margin-top: 5px;
 }
 
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-  .header {
-    padding: 20px 10px; /* Reduce padding on smaller screens */
-  }
+/* Media Queries */
 
-  .header h1 {
-    font-size: 32px; /* Smaller font size for headings on smaller devices */
-  }
-
-  .header p {
-    font-size: 18px; /* Smaller font size for subtitle */
-  }
-}
-
+/* Mobile devices (portrait and landscape) */
 @media (max-width: 480px) {
   .header {
-    padding: 15px 5px; /* Even smaller padding for very small screens */
+    padding: 15px;
   }
 
-  .header h1 {
-    font-size: 24px; /* Adjust heading size further for small screens */
+  .header-content h1 {
+    font-size: 2.5rem; /* Smaller font size for mobile */
   }
 
-  .header p {
-    font-size: 16px; /* Further reduce the subtitle size */
+  .header-content p {
+    font-size: 1.5rem; /* Smaller font size for mobile */
   }
 }
 
+/* Tablets and small desktops */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header {
+    padding: 18px;
+  }
+
+  .header-content h1 {
+    font-size: 4rem; /* Adjust font size for tablets */
+  }
+
+  .header-content p {
+    font-size: 2rem; /* Adjust font size for tablets */
+  }
+}
+
+/* Desktops and larger screens */
+@media (min-width: 769px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header-content h1 {
+    font-size: 5rem; /* Default font size for larger screens */
+  }
+
+  .header-content p {
+    font-size: 2.5rem; /* Default font size for larger screens */
+  }
+}

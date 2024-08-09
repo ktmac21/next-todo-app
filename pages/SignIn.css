@@ -1,75 +1,145 @@
-/* General Container */
+body {
+  background-color: #20232a;
+}
+
 .signin-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  /* Form Styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Form Styling */
+.signin-form {
+  background-color: #1e1e1e;
+  padding: 6rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  font-size: 1.5rem;
+}
+
+/* Heading */
+.signin-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  height: 50px;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #292929;
+  color: #ffffff;
+  font-size: 1.5rem
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 2px solid #4caf50;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries */
+
+/* Mobile devices (portrait and landscape) */
+@media (max-width: 480px) {
   .signin-form {
-    background-color: #1e1e1e;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
+    padding: 4rem;
+    max-width: 100%;
+    height: auto;
+    font-size: 1.2rem;
   }
-  
-  /* Heading */
+
   .signin-form h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
+    font-size: 2rem; /* Smaller font size for mobile */
   }
-  
-  /* Form Group */
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
+
   .form-group input {
-    width: 100%;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #292929;
-    color: #ffffff;
+    height: 30px; /* Adjust height for smaller screens */
+    font-size: 1.2rem; /* Smaller font size for mobile */
   }
-  
-  .form-group input:focus {
-    outline: none;
-    border: 2px solid #4caf50;
-  }
-  
-  /* Button Styling */
+
   button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #4caf50;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    font-size: 1.2rem; /* Smaller font size for mobile */
   }
-  
-  button:hover {
-    background-color: #45a049;
+}
+
+/* Tablets and small desktops */
+@media (min-width: 481px) and (max-width: 768px) {
+  .signin-form {
+    padding: 5rem;
+    max-width: 100%;
+    height: auto;
+    font-size: 1.3rem;
   }
-  
-  /* Error Message */
-  .error {
-    color: #ff4d4d;
-    margin-top: 10px;
-    font-weight: 500;
-    text-align: center;
+
+  .signin-form h2 {
+    font-size: 2.5rem; /* Adjust font size for tablets */
   }
-  
+
+  .form-group input {
+    height: 45px; /* Adjust height for tablets */
+    font-size: 1.3rem; /* Adjust font size for tablets */
+  }
+
+  button {
+    font-size: 1.3rem; /* Adjust font size for tablets */
+  }
+}
+
+/* Desktops and larger screens */
+@media (min-width: 769px) {
+  .signin-form {
+    padding: 6rem;
+    max-width: 600px;
+    height: 600px;
+    font-size: 1.5rem;
+  }
+
+  .signin-form h2 {
+    font-size: 3rem; /* Default font size for desktops */
+  }
+
+  .form-group input {
+    height: 50px; /* Default height for desktops */
+    font-size: 1.5rem; /* Default font size for desktops */
+  }
+
+  button {
+    font-size: 1.5rem; /* Default font size for desktops */
+  }
+}

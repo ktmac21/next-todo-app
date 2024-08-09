@@ -1,0 +1,88 @@
+/* src/pages/Landing.css */
+.landing-page {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px; 
+    text-align: center;
+  }
+  
+  .signup-link {
+    color: #4caf50; /* Use a color that stands out for links, adjust as per your color scheme */
+    text-decoration: none; /* Optional: removes underline from links */
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline; /* Adds underline on hover for better user experience */
+    color: orange;
+  }
+
+  /* Media Queries */
+
+/* Mobile devices (portrait and landscape) */
+@media (max-width: 480px) {
+    .image-container {
+      width: 80%; /* Adjust the image container to be responsive */
+      margin-top: 10px;
+    }
+  
+    .landing-content h1 {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+  
+    .landing-content p {
+      font-size: 1rem; /* Adjust font size for readability on mobile */
+    }
+  
+    .signin-info p {
+      font-size: 1.5rem; /* Smaller font size for info on mobile */
+      width: 100%; /* Adjust width for mobile view */
+    }
+  }
+  
+  /* Tablets and small desktops */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .image-container {
+      width: 70%; /* Adjust the image container for tablet screens */
+      margin-top: 15px;
+    }
+  
+    .landing-content h1 {
+      font-size: 2.5rem; /* Adjust font size for tablets */
+    }
+  
+    .landing-content p {
+      font-size: 1.1rem; /* Adjust font size for readability on tablets */
+    }
+  
+    .signin-info p {
+      font-size: 1.75rem; /* Adjust font size for info on tablets */
+      width: 90%; /* Adjust width for tablet view */
+    }
+  }
+  
+  /* Desktops and larger screens */
+  @media (min-width: 769px) {
+    .image-container {
+      width: 300px; /* Keep image container size consistent for larger screens */
+      margin-top: 20px;
+    }
+  
+    .landing-content h1 {
+      font-size: 3rem; /* Keep font size for desktops */
+    }
+  
+    .landing-content p {
+      font-size: 1.2rem; /* Keep font size for desktops */
+    }
+  
+    .signin-info p {
+      font-size: 1.875rem; /* Keep font size for info on desktops */
+      width: 800px; /* Keep width for larger screens */
+    }
+  }
+  
+  
