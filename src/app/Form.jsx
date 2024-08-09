@@ -76,7 +76,6 @@ const Form = () => {
         completed: false
       });
       setTask("");
-      alert("Data added successfully!");
     } catch (error) {
       console.error("Firebase error", error);
     }
