@@ -4,6 +4,7 @@ import './SignIn.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase.js';
 import { useRouter } from 'next/navigation'
+import Header from '../src/app/Header'
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -20,13 +21,15 @@ const SignIn = () => {
       console.log({ res });
       setEmail('');
       setPassword('');
-      router.push('/')
+      router.push('/SignedIn')
     } catch (e) {
       console.error(e);
     }
   };
 
   return (
+    <div>
+    <Header/>
     <div className="signin-container">
       <form onSubmit={handleSignIn} className="signin-form">
         <h2>Sign In</h2>
@@ -53,6 +56,7 @@ const SignIn = () => {
         <button type="submit">Sign In</button>
         {error && <p className="error">{error.message}</p>}
       </form>
+    </div>
     </div>
   );
 };

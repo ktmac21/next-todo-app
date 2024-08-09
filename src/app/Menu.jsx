@@ -15,7 +15,7 @@ const Menu = () => {
     try {
       const res = await signOut(auth); // Sign out the user
       console.log({ res });
-      router.push('/SignIn'); // Redirect to the SignIn page
+      router.push('/'); // Redirect to the SignIn page
     } catch (error) {
       console.error('Error signing out:', error);
     }
@@ -33,7 +33,7 @@ const Menu = () => {
       <nav className="nav">
         <Link href="/SignUp" className="link">Sign Up</Link>
         <Link href="/SignIn" className="link">Login</Link>
-        <button onClick={handleSignOut}>Sign Out</button>
+        <button className="logout-button" onClick={handleSignOut}>Sign Out</button>
         
       </nav>
     </header>

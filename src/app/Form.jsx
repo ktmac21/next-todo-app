@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { db, auth } from "../../firebase.js"
-import { push, ref, set, onValue, update, remove } from 'firebase/database'
+import { push, ref, set, onValue, update, remove, query, orderByChild, equalTo } from 'firebase/database'
 import './Form.css';
 
 const Form = () => {
@@ -11,29 +11,42 @@ const Form = () => {
   const [completedTasks, setCompletedTasks] = useState([]);
 
   useEffect(() => {
-    const tasksRef = ref(db, 'tasks')
-    const unsubscribe = onValue(tasksRef, (snapshot) => {
-      const data = snapshot.val();
-      const loadedTasks = [];
-      const loadedCompletedTasks = [];
-      for (let id in data) {
-        const task = { id, ...data[id] };
-        if (task.completed) {
-          loadedCompletedTasks.push(task);
-        } else {
-          loadedTasks.push(task);
-        }
+    const fetchTasks = () => {
+      const user = auth.currentUser;
+      if (!user) {
+        console.error('No user is logged in');
+        return;
       }
-      setTasks(loadedTasks);
-      setCompletedTasks(loadedCompletedTasks);
-    });
 
-    return () => unsubscribe();
+      const tasksRef = query(ref(db, 'tasks'), orderByChild('uid'), equalTo(user.uid));
+
+      const unsubscribe = onValue(tasksRef, (snapshot) => {
+        const data = snapshot.val();
+        const loadedTasks = [];
+        const loadedCompletedTasks = [];
+
+        for (let id in data) {
+          const task = { id, ...data[id] };
+          if (task.completed) {
+            loadedCompletedTasks.push(task);
+          } else {
+            loadedTasks.push(task);
+          }
+        }
+        setTasks(loadedTasks);
+        setCompletedTasks(loadedCompletedTasks);
+      });
+
+      return unsubscribe;
+    };
+
+    const unsubscribe = fetchTasks();
+    return () => unsubscribe && unsubscribe();
   }, []);
 
   const handleDelete = (taskId) => {
     const taskRef = ref(db, `tasks/${taskId}`);
-    remove(taskRef); 
+    remove(taskRef);
   };
 
   const handleButtonClick = () => {
@@ -47,10 +60,18 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!task.trim()) return;
+
+    const user = auth.currentUser;
+    if (!user) {
+      console.error('No user is logged in');
+      return;
+    }
+
     try {
       const taskRef = ref(db, 'tasks');
       const newDataRef = push(taskRef);
       set(newDataRef, {
+        uid: user.uid, // Store the user's UID
         task: task,
         completed: false
       });
@@ -110,8 +131,8 @@ const Form = () => {
               <li key={task.id} className="task-item">
                 <span className="task-text">{task.task}</span>
                 <button onClick={() => handleDelete(task.id)} className="delete-button">
-              Delete
-            </button>
+                  Delete
+                </button>
               </li>
             ))}
           </ul>

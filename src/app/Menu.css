@@ -15,14 +15,21 @@
     flex: end;
     display: flex;
     flex-direction: row;
-    margin-right: 20%;
+    justify-content: space-around;
   }
   
   .link {
     text-decoration: none;
     color: black; 
     font-size: 20px; 
-    margin-right: 20%;
+    margin-right: 20px;
+  }
+
+  .logout-button {
+    background-color: black;
+    color: white;
+    width: 100px; 
+    height: 30px;
   }
   
   /* Media Queries */
@@ -35,6 +42,7 @@
   .logo, .nav {
     margin-left: 0;
     margin-right: 0;
+    flex-direction: column;
     justify-content: center; /* Center-align logo and nav items */
   }
 
@@ -44,7 +52,7 @@
 
   .link {
     font-size: 16px; /* Smaller font size for links */
-    margin-right: 5px; /* Less space between links */
+    margin-bottom: 5px; /* Less space between links */
   }
 }
 
