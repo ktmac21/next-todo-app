@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import './SignIn.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase.js';
+import { auth } from '../../../firebase';
 import { useRouter } from 'next/navigation'
-import Header from '../src/app/Header'
-import Menu from '../src/app/Menu'
+import Header from '../Header'
+import Menu from '../Menu'
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -22,7 +22,7 @@ const SignIn = () => {
       console.log({ res });
       setEmail('');
       setPassword('');
-      router.push('/SignedIn')
+      router.push('/logged-in')
     } catch (e) {
       console.error(e);
     }
@@ -56,7 +56,6 @@ const SignIn = () => {
           />
         </div>
         <button type="submit">Sign In</button>
-        {error && <p className="error">{error.message}</p>}
       </form>
     </div>
     </div>

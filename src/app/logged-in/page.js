@@ -1,11 +1,12 @@
 // src/pages/SignedIn.jsx
+'use client'
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase'; // Ensure this path is correct
-import Form from '../src/app//Form'; // Ensure this path is correct
-import Header from '../src/app/Header' // Optionally include the header
-import Menu from '../src/app/Menu';
+import { auth } from '../../../firebase'; 
+import Form from '../Form'; 
+import Header from '../Header' 
+import Menu from '../Menu';
 
 const SignedIn = () => {
   const [loading, setLoading] = useState(true);
@@ -14,7 +15,7 @@ const SignedIn = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        router.push('/SignIn'); // Redirect to SignIn page if not authenticated
+        router.push('/sign-in'); // Redirect to SignIn page if not authenticated
       } else {
         setLoading(false); // Set loading to false if user is authenticated
       }

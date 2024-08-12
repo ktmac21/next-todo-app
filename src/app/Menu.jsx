@@ -1,4 +1,5 @@
 // src/components/Menu.js
+'use client'
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,6 +8,7 @@ import logo from "/public/logo.png";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase.js";
 import { useRouter } from "next/navigation";
+
 
 const Menu = () => {
   const [user, setUser] = useState(null); // State to store the user
@@ -46,10 +48,10 @@ const Menu = () => {
       <nav className="nav">
         {!user ? (
           <>
-            <Link href="/SignUp" className="link">
+            <Link href="/sign-up" className="link">
               Sign Up
             </Link>
-            <Link href="/SignIn" className="link">
+            <Link href="/sign-in" className="link">
               Login
             </Link>
           </>
