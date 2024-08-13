@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { db, auth } from "../../firebase.js"
 import { push, ref, set, onValue, update, remove, query, orderByChild, equalTo } from 'firebase/database'
-import './Form.css';
+import styles from './Form.module.css';
 
 const Form = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -87,15 +87,15 @@ const Form = () => {
   };
 
   return (
-    <div className="form-container">
-      <div className="task-manager">Task Manager</div>
-      <main className="main-content">
-        <button onClick={handleButtonClick} className="toggle-button">
+    <div className={styles['form-container']}>
+      <div className={styles['task-manager']}>Task Manager</div>
+      <main className={styles["main-content"]}>
+        <button onClick={handleButtonClick} className={styles["toggle-button"]}>
           {isVisible ? 'Cancel' : 'Add Task'}
         </button>
 
         {isVisible && (
-          <form onSubmit={handleSubmit} className="task-form">
+          <form onSubmit={handleSubmit} className={styles["task-form"]}>
             <input
               type="text"
               value={task}
@@ -103,19 +103,19 @@ const Form = () => {
               placeholder="Enter your task"
               className="task-input"
             />
-            <button type="submit" className="submit-button">
+            <button type="submit" className={styles["submit-button"]}>
               Submit
             </button>
           </form>
         )}
 
-        <div className="task-list-container">
-          <div className="task-manager">Unfinished Tasks</div>
-          <ul className="task-list">
+        <div className={styles["task-list-container"]}>
+          <div className={styles["task-manager"]}>Unfinished Tasks</div>
+          <ul className={styles["task-list"]}>
             {tasks.map((task) => (
-              <li key={task.id} className="task-item">
-                <span className="task-text">{task.task}</span>
-                <button onClick={() => handleComplete(task.id)} className="complete-button">
+              <li key={task.id} className={styles["task-item"]}>
+                <span className={styles["task-text"]}>{task.task}</span>
+                <button onClick={() => handleComplete(task.id)} className={styles["complete-button"]}>
                   Complete
                 </button>
               </li>
@@ -123,13 +123,13 @@ const Form = () => {
           </ul>
         </div>
 
-        <div className="completed-task-list-container">
-          <div className="task-manager">Completed Tasks</div>
-          <ul className="completed-task-list">
+        <div className={styles["completed-task-list-container"]}>
+          <div className={styles["task-manager"]}>Completed Tasks</div>
+          <ul className={styles["completed-task-list"]}>
             {completedTasks.map((task) => (
-              <li key={task.id} className="task-item">
-                <span className="task-text">{task.task}</span>
-                <button onClick={() => handleDelete(task.id)} className="delete-button">
+              <li key={task.id} className={styles["task-item"]}>
+                <span className={styles["task-text"]}>{task.task}</span>
+                <button onClick={() => handleDelete(task.id)} className={styles["delete-button"]}>
                   Delete
                 </button>
               </li>

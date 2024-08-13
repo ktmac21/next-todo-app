@@ -1,0 +1,43 @@
+/* src/pages/Landing.css */
+.landing-page {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.signup-link {
+  color: #4caf50; /* Use a color that stands out for links, adjust as per your color scheme */
+  text-decoration: none; /* Optional: removes underline from links */
+}
+
+.signup-link:hover {
+  text-decoration: underline; /* Adds underline on hover for better user experience */
+  color: orange;
+}
+
+/* Media Queries */
+
+/* Mobile devices (portrait and landscape) */
+@media (max-width: 480px) {
+  .landing-page {
+    font-size: 20px;
+  }
+}
+
+/* Tablets and small desktops */
+@media (min-width: 481px) and (max-width: 768px) {
+}
+
+/* Desktops and larger screens */
+@media (min-width: 769px) {
+  .image-container {
+    width: 300px; /* Keep image container size consistent for larger screens */
+    margin-top: 20px;
+  }
+}

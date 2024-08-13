@@ -4,15 +4,13 @@ import './SignIn.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../../firebase';
 import { useRouter } from 'next/navigation'
-import Header from '../Header'
-import Menu from '../Menu'
+
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Use the correct hook for signing in
-  const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const router = useRouter()
 
   const handleSignIn = async (e) => {
@@ -29,9 +27,7 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-    <Menu />
-    <Header/>
+    <>
     <div className="signin-container">
       <form onSubmit={handleSignIn} className="signin-form">
         <h2>Sign In</h2>
@@ -58,7 +54,7 @@ const SignIn = () => {
         <button type="submit">Sign In</button>
       </form>
     </div>
-    </div>
+    </>
   );
 };
 

@@ -4,8 +4,6 @@ import './SignUp.css'
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import {auth} from '../../../firebase.js'
 import { useRouter } from 'next/navigation'
-import Header from '../Header.jsx'
-import Menu from '../Menu.jsx'
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -68,8 +66,6 @@ const SignUp = () => {
 
   return (
     <div>
-    <Menu />
-    <Header />
     <div className="signup-container">
       <form onSubmit={handleSignUp} className="signup-form">
         <h2>Sign Up</h2>

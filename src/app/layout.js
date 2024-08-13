@@ -1,16 +1,18 @@
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+import Header from "@/components/Header";
 
 export const metadata = {
-  title: "Todo-app",
+  title: "ChexMate",
   description: "Todo stuff that you need to do",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
