@@ -14,7 +14,7 @@ const SignIn = () => {
   const router = useRouter()
 
   const handleSignIn = async (e) => {
-    e.preventDefault(); // Prevent page reload on form submission
+    e.preventDefault(); 
     try {
       const res = await signInWithEmailAndPassword(email, password);
       console.log({ res });

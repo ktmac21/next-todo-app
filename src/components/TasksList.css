@@ -1,0 +1,66 @@
+.task-list-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+.task-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #fff;
+    transition: transform 0.2s;
+    height: 200px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .task-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Optional: Add some colorful backgrounds */
+  .task-card:nth-child(odd) {
+    --card-bg-color: #6c63ff; /* Purple */
+  }
+  
+  .task-card:nth-child(even) {
+    --card-bg-color: #ff6584; /* Pink */
+  }
+  
+  /* Feel free to customize colors */
+  .task-card:nth-child(3n) {
+    --card-bg-color: #1abc9c; /* Green */
+  }
+  
+  .task-card:nth-child(4n) {
+    --card-bg-color: #3498db; /* Blue */
+  }
+  
+  .task-card:nth-child(5n) {
+    --card-bg-color: #f39c12; /* Orange */
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .complete-button {
+    background-color: #ff6584;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    float: right;
+    font-size: 25px;
+
+  }

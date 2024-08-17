@@ -1,50 +1,60 @@
 .form-container {
-  margin: 0 auto;
-  text-align: center;
-  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:50%;
 }
 
 .task-manager {
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   padding-bottom: 5px;
   margin-top: 10px;
 }
 
-.toggle-button,
-.submit-button,
-.complete-button {
+.toggle-button {
   padding: 10px 20px;
-  background-color: orange;
-  color: white;
+  background-color: #ff6584;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  height: 70px;
+  font-size: 25px;
+}
+
+.submit-button {
+  width: 25%;
+  height: 75px;
+  font-size: 25px;
+  background-color: #ff6584;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.submit-button {
-  width: 100px;
-  margin-left: 1px;
-}
-
-.toggle-button:hover,
-.submit-button:hover,
-.complete-button:hover {
-  background-color: orange;
-}
-
 .task-form {
+  display: flex;
   margin-top: 10px;
+  width: 100%;
+  height: 75px;
 }
 
 .task-input {
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 20%;
+  width: 75%;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-right: 20px;
-  padding-right: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 25px;
 }
 
 .task-list,
@@ -87,7 +97,6 @@
   background-color: purple;
 }
 
-
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .task-list,
@@ -107,23 +116,22 @@
   .task-input {
     width: auto; /* Adjust width for smaller devices */
   }
-  
+
   .task-text {
     margin-bottom: 5px;
   }
 }
-  @media (max-width: 480px) {
-
-    .task-list,
+@media (max-width: 480px) {
+  .task-list,
   .completed-task-list {
     padding-right: 45px;
   }
 
-    .task-manager {
-      font-size: 20px; /* Even smaller font size for very small devices */
-    }
-  
-    .task-text {
-      text-align: center; /* Center text on the smallest screens */
-    }
+  .task-manager {
+    font-size: 20px; /* Even smaller font size for very small devices */
   }
+
+  .task-text {
+    text-align: center; /* Center text on the smallest screens */
+  }
+}
