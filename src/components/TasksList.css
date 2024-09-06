@@ -112,3 +112,45 @@ ul.completed-task-list-container {
   .complete-button:hover {
     background-color: #ff339c;
   }
+
+/* Media Queries */
+
+/* Mobile devices (portrait and landscape) */
+@media (max-width: 480px) {
+  .add-task-card {
+    padding: 15px;
+  }
+
+  .task-card,
+  .completed-task-card {
+    width: 90%;
+    font-size: 24px;
+    height: auto;
+    min-height: 50px;
+  }
+
+  .complete-button {
+    width: 80px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+/* Tablets and small desktops */
+@media (min-width: 481px) and (max-width: 768px) {
+  .add-task-card {
+    max-width: 600px;
+  }
+
+  .task-card,
+  .completed-task-card {
+    width: 80%;
+    font-size: 28px;
+  }
+
+  .complete-button {
+    width: 90px;
+    height: 45px;
+    font-size: 14px;
+  }
+}

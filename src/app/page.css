@@ -21,23 +21,38 @@
   color: orange;
 }
 
+/* Responsive image styles */
+.landing-page img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Media Queries */
 
 /* Mobile devices (portrait and landscape) */
 @media (max-width: 480px) {
   .landing-page {
-    font-size: 20px;
+    font-size: 30px;
+    padding-top: 20px;
+  }
+
+  .landing-page img {
+    max-width: 90%;
+    margin-bottom: 20px;
   }
 }
 
 /* Tablets and small desktops */
 @media (min-width: 481px) and (max-width: 768px) {
-}
+  .landing-page {
+    font-size: 40px;
+    padding-top: 30px;
+  }
 
-/* Desktops and larger screens */
-@media (min-width: 769px) {
-  .image-container {
-    width: 300px; /* Keep image container size consistent for larger screens */
-    margin-top: 20px;
+  .landing-page img {
+    max-width: 80%;
+    margin-bottom: 30px;
   }
 }
+
+

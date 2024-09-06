@@ -92,3 +92,42 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+
+/* Media Queries */
+
+/* Mobile devices (portrait and landscape) */
+@media (max-width: 480px) {
+  .add-task-card {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .add-task-title {
+    font-size: 1.5rem;
+  }
+
+  .add-task-form input,
+  .add-task-form button {
+    width: 90%;
+  }
+}
+
+/* Tablets and small desktops */
+@media (min-width: 481px) and (max-width: 768px) {
+  .add-task-card {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .add-task-title {
+    font-size: 1.8rem;
+  }
+
+  .add-task-form input {
+    width: 80%;
+  }
+
+  .add-task-form button {
+    width: 60%;
+  }
+}
