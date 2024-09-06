@@ -1,7 +1,7 @@
  /* src/components/Header.css */
 
  .header {
-  background-color: #282c34;
+  background-color: #ff6584;
   color: #ffffff;
   padding: 20px;
   text-align: center;
@@ -15,7 +15,7 @@
 
 .header-content p {
   font-size: 2.5rem;
-  color: #bbbbbb;
+  color: white;
   margin-top: 5px;
 }
 
