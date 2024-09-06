@@ -4,6 +4,8 @@ A modern, responsive todo application built with Next.js and Firebase, featuring
 
 ![Todo App Screenshot](./public/ChexMate-screenshot.png)
 
+Check out the live site: [ChexMate Todo App](https://next-todo-app-b1db5.web.app/)
+
 ## Features
 
 - User authentication (sign up, sign in, sign out)
