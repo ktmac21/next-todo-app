@@ -1,0 +1,70 @@
+.completed-task-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.task-manager {
+  text-align: center;
+}
+
+.completed-task-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #fff;
+    transition: transform 0.2s;
+    height: 50px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .completed-task-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Optional: Add some colorful backgrounds */
+  .completed-task-card:nth-child(odd) {
+    --card-bg-color: #6c63ff; /* Purple */
+  }
+  
+  .completed-task-card:nth-child(even) {
+    --card-bg-color: #ff6584; /* Pink */
+  }
+  
+  /* Feel free to customize colors */
+  .completed-task-card:nth-child(3n) {
+    --card-bg-color: #1abc9c; /* Green */
+  }
+  
+  .completed-task-card:nth-child(4n) {
+    --card-bg-color: #3498db; /* Blue */
+  }
+  
+  .completed-task-card:nth-child(5n) {
+    --card-bg-color: #f39c12; /* Orange */
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .delete-button {
+    background-color: #ff6584;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    float: right;
+    font-size: 15px;
+  }
+  
+  .delete-button:hover {
+    background-color: #ff339c;
+  }
+
+  

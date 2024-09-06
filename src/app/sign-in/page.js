@@ -1,36 +1,33 @@
-'use client'
-import React, { useState } from 'react';
-import './SignIn.css'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '../../../firebase';
-import { useRouter } from 'next/navigation'
+'use client';
 
+import { useState } from 'react';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
+import './SignIn.css';
 
-const SignIn = () => {
+export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
-  const router = useRouter()
-
-  const handleSignIn = async (e) => {
-    e.preventDefault(); 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const auth = getAuth();
+    
     try {
-      const res = await signInWithEmailAndPassword(email, password);
-      console.log({ res });
-      setEmail('');
-      setPassword('');
-      router.push('/logged-in')
-    } catch (e) {
-      console.error(e);
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push('/add-task');
+    } catch (error) {
+      setError(error.message);
     }
   };
 
   return (
-    <>
     <div className="signin-container">
-      <form onSubmit={handleSignIn} className="signin-form">
+      <form className="signin-form" onSubmit={handleSubmit}>
         <h2>Sign In</h2>
+        {error && <p className="error">{error}</p>}
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -38,6 +35,7 @@ const SignIn = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
             required
           />
         </div>
@@ -48,14 +46,12 @@ const SignIn = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
             required
           />
         </div>
         <button type="submit">Sign In</button>
       </form>
     </div>
-    </>
   );
-};
-
-export default SignIn;
+}

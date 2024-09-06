@@ -15,19 +15,18 @@ body {
 /* Form Styling */
 .signin-form {
   background-color: #1e1e1e;
-  padding: 6rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 600px;
   height: 600px;
-  font-size: 1.5rem;
+  font-size: 1.5
 }
 
 /* Heading */
 .signin-form h2 {
   text-align: center;
   margin-bottom: 1.5rem;
+
 }
 
 /* Form Group */
@@ -43,12 +42,11 @@ body {
 .form-group input {
   width: 100%;
   height: 50px;
-  padding: 0.5rem;
   border: none;
   border-radius: 4px;
   background-color: #292929;
   color: #ffffff;
-  font-size: 1.5rem
+  font-size: 1.5rem;
 }
 
 .form-group input:focus {
@@ -78,23 +76,7 @@ button:hover {
 /* Mobile devices (portrait and landscape) */
 @media (max-width: 480px) {
   .signin-form {
-    padding: 4rem;
-    max-width: 100%;
-    height: auto;
-    font-size: 1.2rem;
-  }
-
-  .signin-form h2 {
-    font-size: 2rem; /* Smaller font size for mobile */
-  }
-
-  .form-group input {
-    height: 30px; /* Adjust height for smaller screens */
-    font-size: 1.2rem; /* Smaller font size for mobile */
-  }
-
-  button {
-    font-size: 1.2rem; /* Smaller font size for mobile */
+    padding: 1.5rem;
   }
 }
 
@@ -142,4 +124,10 @@ button:hover {
   button {
     font-size: 1.5rem; /* Default font size for desktops */
   }
+}
+
+.error {
+  color: #ff0000;
+  margin-bottom: 1rem;
+  text-align: center;
 }
